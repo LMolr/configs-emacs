@@ -19,7 +19,6 @@
  '(company-backends
    (quote
     (company-bbdb
-     (ac-js2-company company-yasnippet)
      (company-ghc company-yasnippet)
      (company-elisp company-yasnippet)
      (company-nxml company-yasnippet)
@@ -41,7 +40,7 @@
  '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
-    ("6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "cdc7555f0b34ed32eb510be295b6b967526dd8060e5d04ff0dce719af789f8e5" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" default)))
+    ("b71d5d49d0b9611c0afce5c6237aacab4f1775b74e513d8ba36ab67dfab35e5a" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "cdc7555f0b34ed32eb510be295b6b967526dd8060e5d04ff0dce719af789f8e5" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" default)))
  '(delete-old-versions t)
  '(delete-selection-mode t)
  '(ediff-before-setup-hook (quote (new-frame)))
@@ -50,31 +49,6 @@
  '(electric-indent-mode t)
  '(electric-layout-mode t)
  '(electric-pair-mode t)
- '(emms-cache-get-function (quote emms-cache-get))
- '(emms-cache-modified-function (quote emms-cache-dirty))
- '(emms-cache-set-function (quote emms-cache-set))
- '(emms-info-functions (quote (emms-info-ogginfo emms-info-mp3info)))
- '(emms-info-report-each-num-tracks 256)
- '(emms-player-list
-   (quote
-    (emms-player-mplayer-playlist emms-player-mplayer emms-player-ogg123 emms-player-mpg321)))
- '(emms-player-ogg123
-   (quote
-    (*player*
-     (start . emms-player-ogg123-start)
-     (stop . emms-player-ogg123-stop)
-     (playablep . emms-player-ogg123-playable-p)
-     (regex . "\\.\\([Oo][Gg][Gg]\\|[Ff][Ll][Aa][Cc]\\)\\'")
-     (pause . emms-player-simple-pause)
-     (resume . emms-player-simple-resume))))
- '(emms-playlist-default-major-mode (quote emms-playlist-mode))
- '(emms-playlist-update-track-function (quote emms-playlist-mode-update-track-function))
- '(emms-repeat-playlist t)
- '(emms-setup-default-player-list
-   (quote
-    (emms-player-mplayer-playlist emms-player-mplayer emms-player-mpg321 emms-player-ogg123)))
- '(emms-source-file-default-directory "/shared/audio/music")
- '(emms-track-description-function (quote emms-info-track-description))
  '(erc-autojoin-mode t)
  '(erc-button-google-url "https://www.google.com/search?q=%s")
  '(erc-button-mode t)
@@ -448,13 +422,13 @@
    (quote
     (face trailing lines space-before-tab newline indentation empty space-after-tab)))
  '(winner-mode t)
- '(yas-global-mode t nil (yasnippet))
  '(yas-prompt-functions
    (quote
     (yas-x-prompt yas-dropdown-prompt yas-completing-prompt yas-no-prompt)))
  '(yas-snippet-dirs
    (quote
-    ("~/.emacs.d/snippets" yas-installed-snippets-dir "/usr/share/emacs/site-lisp/haskell-mode/snippets")) nil (yasnippet)))
+    ("~/.emacs.d/snippets" yas-installed-snippets-dir "/usr/share/emacs/site-lisp/haskell-mode/snippets")) nil (yasnippet))
+ '(yas/global-mode t nil (yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

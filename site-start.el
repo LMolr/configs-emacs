@@ -103,19 +103,15 @@
 (add-hook 'ruby-mode-hook (lambda () (robe-mode)))
 
 ;; ac-js2-mode
-(add-hook 'js2-mode-hook (lambda () (ac-js2-mode)))
+;(add-hook 'js2-mode-hook (lambda () (ac-js2-mode)))
 
 ;; js2-refactor
-(js2r-add-keybindings-with-prefix "C-c C-m")
+;(add-hook 'js2-mode-hook
+;          (lambda ()
+;            (js2r-add-keybindings-with-prefix "C-c C-m")))
 
 ;; skewer-mode
 (add-hook 'after-init-hook (lambda () (skewer-setup)))
-
-;; mozrepl
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (autoload 'moz-minor-mode "moz" "Mozilla Minor Modes" t)
-            (moz-minor-mode t)))
 
 ;; eldoc-mode
 (add-hook 'python-mode-hook 'turn-on-eldoc-mode)
@@ -132,12 +128,6 @@
           (lambda ()
             (sml/setup)
             (sml/apply-theme 'powerline)))
-
-;; emms
-(add-hook 'after-init-hook
-          (lambda ()
-            (emms-all)
-            (emms-default-players)))
 
 ;; whitespace mode
 (add-hook 'prog-mode-hook (lambda () (whitespace-mode)))
@@ -229,11 +219,12 @@
 (global-set-key (kbd "C-c C-p")   'helm-projectile)
 (global-set-key (kbd "C-c <f5>")  'helm-execute-kmacro)
 (global-set-key (kbd "C-c <f6>")  'helm-resume)
-(global-set-key (kbd "C-c <f12>") 'helm-emms)
+
 ;; }
 
 ;; { yasnippet
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(add-hook 'yas-minor-mode-hook
+          '(define-key yas-minor-mode-map (kbd "<tab>") nil))
 ;; }
 
 ;; { expand-region hotkeys
