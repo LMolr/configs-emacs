@@ -222,15 +222,15 @@
 
 ;; }
 
-;; { yasnippet
-;;(add-hook 'yas-minor-mode-hook
-;;          '(define-key yas-minor-mode-map (kbd "<tab>") nil))
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
-;; }
-
 ;; { expand-region hotkeys
 (global-set-key (kbd "C-=") 'er/expand-region)
 ;; }
+;; { yasnippet;; }
+
+;; { yasnippet;; }
+
+;; { yasnippet;; }
+
 
 ;; { company-mode hotkeys
 (global-set-key (kbd "C-c c") 'company-complete)
