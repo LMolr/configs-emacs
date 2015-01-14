@@ -129,6 +129,9 @@
             (sml/setup)
             (sml/apply-theme 'powerline)))
 
+;; relative line numbers
+(add-hook 'after-init-hook 'global-relative-line-numbers-mode)
+
 ;; whitespace mode
 (add-hook 'prog-mode-hook (lambda () (whitespace-mode)))
 
