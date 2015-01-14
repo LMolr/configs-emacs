@@ -394,6 +394,13 @@
  '(python-shell-prompt-output-regexp "\\[[0-9]+\\]>> ")
  '(python-shell-prompt-output-regexps (quote ("\\[[0-9]+\\]<< ")))
  '(python-shell-prompt-regexp "\\[[0-9]+\\]<< ")
+ '(relative-line-numbers-format
+   (lambda
+     (offset)
+     (if
+         (eq offset 0)
+         (number-to-string (line-number-at-pos))
+       (relative-line-numbers-default-format offset))))
  '(require-final-newline t)
  '(save-interprogram-paste-before-kill t)
  '(save-place t nil (saveplace))
