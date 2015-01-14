@@ -330,6 +330,7 @@
  '(gc-cons-threshold 52428800)
  '(global-company-mode t)
  '(global-hl-line-mode t)
+ '(global-relative-line-numbers-mode t)
  '(haskell-complete-module-max-display 16)
  '(haskell-completing-read-function (quote helm--completing-read-default))
  '(haskell-font-lock-symbols t)
