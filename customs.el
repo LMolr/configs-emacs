@@ -399,7 +399,8 @@
      (offset)
      (if
          (eq offset 0)
-         (number-to-string (line-number-at-pos))
+         (number-to-string
+          (line-number-at-pos))
        (relative-line-numbers-default-format offset))))
  '(require-final-newline t)
  '(save-interprogram-paste-before-kill t)
@@ -442,7 +443,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Inconsolata" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "unknown" :family "DejaVu Sans Mono for Powerline"))))
  '(pona:face-item ((t (:inherit variable-pitch :foreground "lime green"))))
  '(pona:face-subtitle ((t (:inherit variable-pitch :foreground "sky blue" :height 1.2))))
  '(pona:face-title ((t (:inherit variable-pitch :foreground "sky blue" :weight bold :height 1.5)))))
