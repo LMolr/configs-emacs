@@ -37,7 +37,7 @@
  '(company-idle-delay 0.2)
  '(company-show-numbers t)
  '(company-tooltip-limit 32)
- '(custom-enabled-themes (quote (smart-mode-line-powerline)))
+ '(custom-enabled-themes (quote (smart-mode-line-powerline monokai)))
  '(custom-safe-themes
    (quote
     ("4e262566c3d57706c70e403d440146a5440de056dfaeb3062f004da1711d83fc" "e56f1b1c1daec5dbddc50abd00fcd00f6ce4079f4a7f66052cf16d96412a09a9" "b71d5d49d0b9611c0afce5c6237aacab4f1775b74e513d8ba36ab67dfab35e5a" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "9dae95cdbed1505d45322ef8b5aa90ccb6cb59e0ff26fef0b8f411dfc416c552" "cdc7555f0b34ed32eb510be295b6b967526dd8060e5d04ff0dce719af789f8e5" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" default)))
@@ -365,7 +365,7 @@
    "https://search.yahooapis.com/WebSearchService/V1/relatedSuggestion?appid=Generic&query=")
  '(indent-tabs-mode nil)
  '(inhibit-startup-buffer-menu t)
- '(inhibit-startup-echo-area-message "alem0lars")
+ '(inhibit-startup-echo-area-message "lmolr")
  '(inhibit-startup-screen nil)
  '(initial-buffer-choice (quote none))
  '(initial-frame-alist (quote ((vertical-scroll-bars))))
@@ -421,7 +421,7 @@
  '(tramp-backup-directory-alist (quote (("." . "~/.emacs.d/tramp_backups"))))
  '(undo-limit 65536)
  '(use-dialog-box nil)
- '(user-mail-address "molari.alessandro@gmail.com")
+ '(user-mail-address "molari.luca@gmail.com")
  '(vagrant-tramp-ssh
    "/usr/share/emacs/site-lisp/vagrant-tramp/bin/vagrant-tramp-ssh")
  '(vc-annotate-background "#2B2B2B")

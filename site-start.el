@@ -245,7 +245,6 @@
 
 ;; }
 
-
 (provide 'site-start)
 
 ;;; site-start.el ends here
