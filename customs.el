@@ -475,6 +475,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "unknown" :family "DejaVu Sans Mono for Powerline"))))
+ '(col-highlight ((t (:inherit highlight))))
  '(pona:face-item ((t (:inherit variable-pitch :foreground "lime green"))))
  '(pona:face-subtitle ((t (:inherit variable-pitch :foreground "sky blue" :height 1.2))))
  '(pona:face-title ((t (:inherit variable-pitch :foreground "sky blue" :weight bold :height 1.5)))))

@@ -36,6 +36,9 @@
 ;;;   - associate files with major modes
 ;;;   - currently this is not possible using the customize system
 ;;;
+;;; Make sure you install the wanted flycheck linters!
+;;; List: http://flycheck.readthedocs.org/en/latest/guide/languages.html
+;;;
 ;;; code:
 ;;;
 
@@ -124,11 +127,12 @@
 
 ;; {{{ eldoc-mode
 
-(add-hook 'python-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'ruby-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'emacs-lisp-mode-hook       'eldoc-mode)
+(add-hook 'ielm-mode-hook             'eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'eldoc-mode)
+(add-hook 'org-mode-hook              'eldoc-mode)
+(add-hook 'python-mode-hook           'eldoc-mode)
+(add-hook 'ruby-mode-hook             'eldoc-mode)
 
 ;; }}}
 
@@ -141,18 +145,46 @@
             (sml/setup)
             (sml/apply-theme 'powerline)))
 
-;; whitespace mode
-(add-hook 'after-init-hook 'whitespace-mode)
+;; {{{ whitespace mode
+
+(add-hook 'css-mode-hook        'whitespace-mode)
+(add-hook 'emacs-lisp-mode-hook 'whitespace-mode)
+(add-hook 'html-mode-hook       'whitespace-mode)
+(add-hook 'haml-mode-hook       'whitespace-mode)
+(add-hook 'js-mode-hook         'whitespace-mode)
+(add-hook 'python-mode-hook     'whitespace-mode)
+(add-hook 'ruby-mode-hook       'whitespace-mode)
+(add-hook 'scss-mode-hook       'whitespace-mode)
+(add-hook 'yaml-mode-hook       'whitespace-mode)
+
+;; }}}
 
 ;; {{{ folding mode
 
 (add-hook 'after-init-hook
           (lambda ()
             (load "folding" 'nomessage 'noerror)
-            (folding-add-to-marks-list 'emacs-lisp-mode ";; {{{" ";; }}}" nil t)
-            (folding-add-to-marks-list 'ruby-mode "# {{{" "# }}}" nil t)))
+            (folding-add-to-marks-list 'css-mode        "// {{{"   "// }}}"   nil t)
+            (folding-add-to-marks-list 'emacs-lisp-mode ";; {{{"   ";; }}}"   nil t)
+            (folding-add-to-marks-list 'haml-mode       ";; {{{"   ";; }}}"   nil t)
+            (folding-add-to-marks-list 'html-mode       "<!-- {{{" "<!-- }}}" nil t)
+            (folding-add-to-marks-list 'js-mode         "// {{{"   "// }}}"   nil t)
+            (folding-add-to-marks-list 'python-mode     "# {{{"    "# }}}"    nil t)
+            (folding-add-to-marks-list 'ruby-mode       "# {{{"    "# }}}"    nil t)
+            (folding-add-to-marks-list 'scss-mode       "// {{{"   "// }}}"   nil t)
+            (folding-add-to-marks-list 'yaml-mode       "# {{{"    "# }}}"    nil t)
+            )
+          )
+
+(add-hook 'css-mode-hook        'folding-mode)
 (add-hook 'emacs-lisp-mode-hook 'folding-mode)
-(add-hook 'ruby-mode-hook 'folding-mode)
+(add-hook 'html-mode-hook       'folding-mode)
+(add-hook 'haml-mode-hook       'folding-mode)
+(add-hook 'js-mode-hook         'folding-mode)
+(add-hook 'python-mode-hook     'folding-mode)
+(add-hook 'ruby-mode-hook       'folding-mode)
+(add-hook 'scss-mode-hook       'folding-mode)
+(add-hook 'yaml-mode-hook       'folding-mode)
 
 ;; }}}
 
