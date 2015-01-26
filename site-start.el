@@ -101,6 +101,7 @@
 
 ;; robe-mode
 (add-hook 'ruby-mode-hook (lambda () (robe-mode)))
+(add-hook 'robe-mode-hook 'robe-start)
 
 ;; ac-js2-mode
 ;(add-hook 'js2-mode-hook (lambda () (ac-js2-mode)))
@@ -131,6 +132,9 @@
 
 ;; whitespace mode
 (add-hook 'prog-mode-hook (lambda () (whitespace-mode)))
+
+;; folding mode
+(add-hook 'after-init-hook 'folding-mode)
 
 ;; vagrant/tramp integration
 (eval-after-load 'tramp '(vagrant-tramp-enable))
