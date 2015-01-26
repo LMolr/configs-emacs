@@ -42,7 +42,7 @@
 ;; enable common Lisp extensions
 (require 'cl-lib)
 
-;; { configuration
+;; {{{ configuration
 
 (defconst config-root-path (file-name-as-directory "/etc/emacs/")
   "The root path for the Emacs config (be sure to include trailing slash).")
@@ -53,7 +53,7 @@
 (defconst autoload-file-name "autoloads.el"
   "The name of the file where autoload definitions will be generated.")
 
-;; }
+;; }}}
 
 ;; { non-custom variables
 
@@ -99,9 +99,12 @@
 ;; anaconda-mode
 (add-hook 'python-mode-hook 'anaconda-mode)
 
-;; robe-mode
+;; {{{ ruby-mode / robe-mode
+
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'robe-mode-hook 'robe-start)
+
+;; }}}
 
 ;; haml-mode
 (add-hook 'haml-mode-hook
@@ -119,14 +122,17 @@
 ;; skewer-mode
 (add-hook 'after-init-hook 'skewer-setup)
 
-;; eldoc-mode
+;; {{{ eldoc-mode
+
 (add-hook 'python-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ruby-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
-;; flycheck
+;; }}}
+
+;; flycheck mode
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
 ;; smart-mode-line + powerline
@@ -136,10 +142,19 @@
             (sml/apply-theme 'powerline)))
 
 ;; whitespace mode
-(add-hook 'prog-mode-hook 'whitespace-mode)
+(add-hook 'after-init-hook 'whitespace-mode)
 
-;; folding mode
-(add-hook 'prog-mode-hook 'folding-mode)
+;; {{{ folding mode
+
+(add-hook 'after-init-hook
+          (lambda ()
+            (load "folding" 'nomessage 'noerror)
+            (folding-add-to-marks-list 'emacs-lisp-mode ";; {{{" ";; }}}" nil t)
+            (folding-add-to-marks-list 'ruby-mode "# {{{" "# }}}" nil t)))
+(add-hook 'emacs-lisp-mode-hook 'folding-mode)
+(add-hook 'ruby-mode-hook 'folding-mode)
+
+;; }}}
 
 ;; vagrant/tramp integration
 (eval-after-load 'tramp '(vagrant-tramp-enable))
@@ -175,9 +190,10 @@
 
 ;; }
 
-;; { hotkeys
+;; {{{ hotkeys
 
-;; { navigation hotkeys
+;; {{{ navigation hotkeys
+
 ;; switch window
 (global-set-key (kbd "C-<tab>") 'other-window)
 ;; disable arrows-based hotkeys
@@ -193,12 +209,15 @@
 (global-unset-key (kbd "<M-right>"))
 (global-unset-key (kbd "<M-up>"))
 (global-unset-key (kbd "<M-down>"))
-;; }
+
 ;; remap C-a to `'smarter-move-beginning-of-line`
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
-;; { helm hotkeys
+;; }}}
+
+;; {{{ helm hotkeys
+
 ;; replacing different commands
 (global-set-key (kbd "C-x f") 'helm-recentf)
 (global-set-key (kbd "C-h g") 'helm-man-woman)
@@ -232,30 +251,30 @@
 (global-set-key (kbd "C-c <f5>")  'helm-execute-kmacro)
 (global-set-key (kbd "C-c <f6>")  'helm-resume)
 
-;; }
+;; }}}
 
-;; { yasnippet
+;; {{{ yasnippet hotkeys
 ;;(add-hook 'yas-minor-mode-hook
 ;;          '(define-key yas-minor-mode-map (kbd "<tab>") nil))
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
-;; }
+;; }}}
 
-;; { expand-region hotkeys
+;; expand-region hotkeys
 (global-set-key (kbd "C-=") 'er/expand-region)
-;; }
 
-;; { company-mode hotkeys
+;; company-mode hotkeys
 (global-set-key (kbd "C-c c") 'company-complete)
-;; }
 
-;; { major-mode specific hotkeys
+;; {{{ major-mode specific hotkeys
+
 ;; display yari using helm, shadowing the global hotkey to show the emacs info
 (add-hook 'ruby-mode-hook
           (lambda ()
             (local-set-key (kbd "C-h r") 'yari-helm)))
-;; }
 
-;; }
+;; }}}
+
+;; }}}
 
 (provide 'site-start)
 ;;; site-start.el ends here
