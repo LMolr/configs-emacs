@@ -44,7 +44,7 @@
 
 ;; { configuration
 
-(defconst config-root-path (file-name-as-directory "/etc/emacs")
+(defconst config-root-path (file-name-as-directory "/etc/emacs/")
   "The root path for the Emacs config (be sure to include trailing slash).")
 
 (defconst custom-file-name "customs.el"
@@ -97,10 +97,10 @@
             (turn-on-magit-gitflow)))
 
 ;; anaconda-mode
-(add-hook 'python-mode-hook (lambda () (anaconda-mode)))
+(add-hook 'python-mode-hook 'anaconda-mode)
 
 ;; robe-mode
-(add-hook 'ruby-mode-hook (lambda () (robe-mode)))
+(add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'robe-mode-hook 'robe-start)
 
 ;; haml-mode
@@ -117,7 +117,7 @@
 ;            (js2r-add-keybindings-with-prefix "C-c C-m")))
 
 ;; skewer-mode
-(add-hook 'after-init-hook (lambda () (skewer-setup)))
+(add-hook 'after-init-hook 'skewer-setup)
 
 ;; eldoc-mode
 (add-hook 'python-mode-hook 'turn-on-eldoc-mode)
@@ -127,7 +127,7 @@
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
 ;; flycheck
-(add-hook 'after-init-hook (lambda () (global-flycheck-mode)))
+(add-hook 'after-init-hook 'global-flycheck-mode)
 
 ;; smart-mode-line + powerline
 (add-hook 'after-init-hook
@@ -136,10 +136,10 @@
             (sml/apply-theme 'powerline)))
 
 ;; whitespace mode
-(add-hook 'prog-mode-hook (lambda () (whitespace-mode)))
+(add-hook 'prog-mode-hook 'whitespace-mode)
 
 ;; folding mode
-(add-hook 'after-init-hook 'folding-mode)
+(add-hook 'prog-mode-hook 'folding-mode)
 
 ;; vagrant/tramp integration
 (eval-after-load 'tramp '(vagrant-tramp-enable))
@@ -194,6 +194,9 @@
 (global-unset-key (kbd "<M-up>"))
 (global-unset-key (kbd "<M-down>"))
 ;; }
+;; remap C-a to `'smarter-move-beginning-of-line`
+(global-set-key [remap move-beginning-of-line]
+                'smarter-move-beginning-of-line)
 
 ;; { helm hotkeys
 ;; replacing different commands
@@ -255,5 +258,4 @@
 ;; }
 
 (provide 'site-start)
-
 ;;; site-start.el ends here

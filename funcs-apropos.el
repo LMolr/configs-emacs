@@ -15,11 +15,11 @@
 
 ;;;###autoload
 (defun apropos-package (package-name)
-    "Shows all Lisp symbols are part of a package named PACKAGE-NAME.
+    "Show all Lisp symbols are part of a package named PACKAGE-NAME.
 When printing them out, removes the PACKAGE-NAME prefix.
 For example, a search for ``apropos'' will display ``print'', ``command'',
-etc. in the *Apropos* buffer.
-Returns list of symbols and documentation found."
+etc... in the *Apropos* buffer.
+Return list of symbols and documentation found."
     (interactive "sEnter the package name: ")
     (let ((package (concat package-name "-")))
       (setq apropos-accumulator (apropos (concat "^" package)))
@@ -40,3 +40,4 @@ Returns list of symbols and documentation found."
 
 
 (provide 'funcs-apropos)
+;;; funcs-apropos.el ends here

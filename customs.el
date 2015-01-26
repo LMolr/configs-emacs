@@ -423,6 +423,7 @@
  '(standard-indent 2)
  '(tab-stop-list (quote (2 4 6 8 10 12 14 16 18 20 22 24 26 28 30)))
  '(tab-width 2)
+ '(tags-revert-without-query t)
  '(tool-bar-mode nil)
  '(tramp-auto-save-directory "~/.emacs.d/tramp_autosaves")
  '(tramp-backup-directory-alist (quote (("." . "~/.emacs.d/tramp_backups"))))
