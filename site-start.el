@@ -103,6 +103,11 @@
 (add-hook 'ruby-mode-hook (lambda () (robe-mode)))
 (add-hook 'robe-mode-hook 'robe-start)
 
+;; haml-mode
+(add-hook 'haml-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)))
+
 ;; ac-js2-mode
 ;(add-hook 'js2-mode-hook (lambda () (ac-js2-mode)))
 

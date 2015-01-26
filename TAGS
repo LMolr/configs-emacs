@@ -1,0 +1,20 @@
+
+autoloads.el,0
+
+funcs-apropos.el,61
+(defun apropos-package (package-name)apropos-package17,265
+
+site-start.el,618
+(defconst config-root-path (file-name-as-directory "/etc/emacs")config-root-path47,1862
+(defconst custom-file-name "customs.el"custom-file-name50,2005
+(defconst autoload-file-name "autoloads.el"autoload-file-name53,2080
+(define-key global-map [remap find-file] 'helm-find-files)global-map213,6266
+(define-key global-map [remap occur] 'helm-occur)global-map214,6325
+(define-key global-map [remap list-buffers] 'helm-buffers-list)global-map215,6375
+(define-key global-map [remap dabbrev-expand] 'helm-dabbrev)global-map216,6439
+(define-key yas-minor-mode-map (kbd "<tab>") nil)yas-minor-mode-map237,7376
+
+funcs-linenumber.el,75
+(defun custom-line-number-format (offset)custom-line-number-format16,215
+
+customs.el,0
