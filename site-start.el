@@ -223,6 +223,9 @@
 
 ;; {{{ navigation hotkeys
 
+;; disable suspend
+(global-unset-key (kbd "C-z"))
+
 ;; switch window
 (global-set-key (kbd "C-<tab>") 'other-window)
 ;; disable arrows-based hotkeys
