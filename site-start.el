@@ -191,9 +191,6 @@
 ;; vagrant/tramp integration
 (eval-after-load 'tramp '(vagrant-tramp-enable))
 
-;; start server
-(add-hook 'after-init-hook 'server-start)
-
 ;; perform cleanup before exiting (suggested by emacs-helm.sh)
 (add-hook 'kill-emacs-hook
           #'(lambda () (and (file-exists-p "$TMP") (delete-file "$TMP"))))

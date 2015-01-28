@@ -15,20 +15,20 @@
  '(calc-undo-length 256)
  '(column-number-mode t)
  '(company-auto-complete (quote (quote company-explicit-action-p)))
- '(company-auto-complete-chars (quote (32 95 40 41 46)))
+ '(company-auto-complete-chars (quote (32 95 40 41 119 46 34 36 39 60 62 47 124 33)))
  '(company-backends
    (quote
     (company-bbdb
-     (company-ghc company-yasnippet)
-     (company-elisp company-yasnippet)
-     (company-nxml company-yasnippet)
-     (company-css company-yasnippet)
-     (company-clang company-yasnippet)
-     (company-robe company-yasnippet)
-     (company-anaconda company-yasnippet)
-     (company-semantic company-yasnippet)
+     (\'company-ghc \'company-yasnippet)
+     (company-elisp \'company-yasnippet)
+     (company-nxml \'company-yasnippet)
+     (company-css \'company-yasnippet)
+     (company-clang \'company-yasnippet)
+     (\'company-robe \'company-yasnippet)
+     (\'company-anaconda \'company-yasnippet)
+     (company-semantic \'company-yasnippet)
      company-cmake company-capf
-     (company-dabbrev-code company-gtags company-etags company-keywords company-yasnippet)
+     (company-dabbrev-code company-gtags company-etags company-keywords \'company-yasnippet)
      company-oddmuse company-files company-dabbrev)))
  '(company-begin-commands (quote (self-insert-command org-self-insert-command)))
  '(company-frontends
@@ -37,6 +37,7 @@
  '(company-idle-delay 0.2)
  '(company-show-numbers t)
  '(company-tooltip-limit 32)
+ '(css-indent-offset 2)
  '(custom-enabled-themes (quote (smart-mode-line-powerline monokai)))
  '(custom-safe-themes
    (quote
@@ -327,6 +328,9 @@
  '(eshell-cmpl-autolist t)
  '(eshell-history-size 512)
  '(fci-rule-color "#383838")
+ '(flycheck-checkers
+   (quote
+    (ada-gnat asciidoc c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd elixir emacs-lisp emacs-lisp-checkdoc erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck haml handlebars haskell-ghc haskell-hlint html-tidy javascript-jshint javascript-eslint javascript-gjslint json-jsonlint less lua perl perl-perlcritic php php-phpmd php-phpcs puppet-parser puppet-lint python-flake8 python-pylint python-pycompile r-lintr racket rpm-rpmlint rst rst-sphinx ruby-rubocop ruby-rubylint ruby ruby-jruby rust sass scala scala-scalastyle scss scss-lint sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim tex-chktex tex-lacheck texinfo verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
  '(gc-cons-threshold 52428800)
  '(global-company-mode t)
  '(global-hl-line-mode t)
@@ -369,6 +373,7 @@
  '(inhibit-startup-screen nil)
  '(initial-buffer-choice (quote none))
  '(initial-frame-alist (quote ((vertical-scroll-bars))))
+ '(js-indent-level 2)
  '(kept-new-versions 6)
  '(kept-old-versions 4)
  '(large-file-warning-threshold 104857600)
@@ -412,6 +417,7 @@
  '(save-place-file "~/.emacs.d/places")
  '(save-place-limit 512)
  '(scroll-bar-mode nil)
+ '(scss-compile-at-save nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(slime-auto-start (quote always))
