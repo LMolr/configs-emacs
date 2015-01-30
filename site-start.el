@@ -84,11 +84,13 @@
 
 ;; { manual initialization
 
+;; enable fringe for git-gutter+
+(add-hook 'after-init-hook (lambda () (require 'git-gutter-fringe+)))
+
 ;; helm-mode
 (add-hook 'after-init-hook (lambda () (require 'helm-config)))
 
 ;; rainbow-delimiters mode
-(add-hook 'text-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; company-mode
@@ -129,19 +131,10 @@
 ;; skewer-mode
 (add-hook 'after-init-hook 'skewer-setup)
 
-;; {{{ eldoc-mode
-
-(add-hook 'emacs-lisp-mode-hook       'eldoc-mode)
-(add-hook 'ielm-mode-hook             'eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'eldoc-mode)
-(add-hook 'org-mode-hook              'eldoc-mode)
-(add-hook 'python-mode-hook           'eldoc-mode)
-(add-hook 'ruby-mode-hook             'eldoc-mode)
-
-;; }}}
+;; eldoc-mode
+(add-hook 'prog-mode-hook 'eldoc-mode)
 
 ;; flycheck mode
-(add-hook 'text-mode-hook 'flycheck-mode)
 (add-hook 'prog-mode-hook 'flycheck-mode)
 
 ;; smart-mode-line + powerline
@@ -151,7 +144,6 @@
             (sml/apply-theme 'powerline)))
 
 ;; whitespace mode
-(add-hook 'text-mode-hook 'whitespace-mode)
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
 ;; {{{ folding mode
@@ -171,7 +163,6 @@
             )
           )
 
-(add-hook 'text-mode-hook 'folding-mode)
 (add-hook 'prog-mode-hook 'folding-mode)
 
 ;; }}}
