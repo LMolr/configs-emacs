@@ -87,6 +87,10 @@
 ;; helm-mode
 (add-hook 'after-init-hook (lambda () (require 'helm-config)))
 
+;; rainbow-delimiters mode
+(add-hook 'text-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 ;; company-mode
 (add-hook 'after-init-hook
           (lambda ()
@@ -137,7 +141,8 @@
 ;; }}}
 
 ;; flycheck mode
-(add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'text-mode-hook 'flycheck-mode)
+(add-hook 'prog-mode-hook 'flycheck-mode)
 
 ;; smart-mode-line + powerline
 (add-hook 'after-init-hook
@@ -145,19 +150,9 @@
             (sml/setup)
             (sml/apply-theme 'powerline)))
 
-;; {{{ whitespace mode
-
-(add-hook 'css-mode-hook        'whitespace-mode)
-(add-hook 'emacs-lisp-mode-hook 'whitespace-mode)
-(add-hook 'html-mode-hook       'whitespace-mode)
-(add-hook 'haml-mode-hook       'whitespace-mode)
-(add-hook 'js-mode-hook         'whitespace-mode)
-(add-hook 'python-mode-hook     'whitespace-mode)
-(add-hook 'ruby-mode-hook       'whitespace-mode)
-(add-hook 'scss-mode-hook       'whitespace-mode)
-(add-hook 'yaml-mode-hook       'whitespace-mode)
-
-;; }}}
+;; whitespace mode
+(add-hook 'text-mode-hook 'whitespace-mode)
+(add-hook 'prog-mode-hook 'whitespace-mode)
 
 ;; {{{ folding mode
 
@@ -176,15 +171,8 @@
             )
           )
 
-(add-hook 'css-mode-hook        'folding-mode)
-(add-hook 'emacs-lisp-mode-hook 'folding-mode)
-(add-hook 'html-mode-hook       'folding-mode)
-(add-hook 'haml-mode-hook       'folding-mode)
-(add-hook 'js-mode-hook         'folding-mode)
-(add-hook 'python-mode-hook     'folding-mode)
-(add-hook 'ruby-mode-hook       'folding-mode)
-(add-hook 'scss-mode-hook       'folding-mode)
-(add-hook 'yaml-mode-hook       'folding-mode)
+(add-hook 'text-mode-hook 'folding-mode)
+(add-hook 'prog-mode-hook 'folding-mode)
 
 ;; }}}
 
@@ -272,7 +260,8 @@
 (global-set-key (kbd "C-:")       'helm-eval-expression-with-eldoc)
 (global-set-key (kbd "C-,")       'helm-calcul-expression)
 (global-set-key (kbd "C-r")       'helm-regexp)
-(global-set-key (kbd "C-c s")     'helm-do-grep)
+(global-set-key (kbd "C-c o")     'helm-occurr)
+(global-set-key (kbd "C-c g")     'helm-do-grep)
 (global-set-key (kbd "C-c f")     'helm-for-files)
 (global-set-key (kbd "C-c <SPC>") 'helm-all-mark-rings)
 (global-set-key (kbd "C-c C-x")   'helm-run-external-command)
@@ -285,11 +274,11 @@
 
 ;; }}}
 
-;; {{{ yasnippet hotkeys
-;;(add-hook 'yas-minor-mode-hook
-;;          '(define-key yas-minor-mode-map (kbd "<tab>") nil))
+;; yasnippet hotkeys
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
-;; }}}
+
+;; magit hotkeys
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; expand-region hotkeys
 (global-set-key (kbd "C-=") 'er/expand-region)
