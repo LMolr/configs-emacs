@@ -393,7 +393,7 @@
  '(minibuffer-prompt-properties (quote (read-only t face minibuffer-prompt)))
  '(mode-require-final-newline t)
  '(mouse-yank-at-point t)
- '(next-line-add-newlines t)
+ '(next-line-add-newlines nil)
  '(normal-erase-is-backspace nil)
  '(projectile-completion-system (quote helm))
  '(projectile-enable-caching t)
