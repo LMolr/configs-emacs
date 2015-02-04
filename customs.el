@@ -20,7 +20,7 @@
  '(company-auto-complete-chars nil)
  '(company-backends
    (quote
-    (company-bbdb
+    (\'company-tern company-bbdb
      (\'company-ghc \'company-yasnippet)
      (company-elisp \'company-yasnippet)
      (company-nxml \'company-yasnippet)
@@ -382,6 +382,7 @@
  '(inhibit-startup-screen t)
  '(initial-buffer-choice (quote none))
  '(initial-frame-alist (quote ((vertical-scroll-bars))))
+ '(js-expr-indent-offset 2)
  '(js-indent-level 2)
  '(kept-new-versions 6)
  '(kept-old-versions 4)
@@ -400,7 +401,7 @@
  '(projectile-enable-idle-timer t)
  '(projectile-file-exists-remote-cache-expire 480)
  '(projectile-global-mode t)
- '(projectile-idle-timer-seconds 3)
+ '(projectile-idle-timer-seconds 32)
  '(python-check-command "pylint")
  '(python-indent-offset 4)
  '(python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))
@@ -414,6 +415,7 @@
  '(python-shell-prompt-output-regexp "\\[[0-9]+\\]>> ")
  '(python-shell-prompt-output-regexps (quote ("\\[[0-9]+\\]<< ")))
  '(python-shell-prompt-regexp "\\[[0-9]+\\]<< ")
+ '(rainbow-delimiters-max-face-count 8)
  '(recentf-max-saved-items 64)
  '(relative-line-numbers-format
    (lambda

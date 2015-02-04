@@ -120,13 +120,8 @@
           (lambda ()
             (setq indent-tabs-mode nil)))
 
-;; ac-js2-mode
-;(add-hook 'js2-mode-hook (lambda () (ac-js2-mode)))
-
-;; js2-refactor
-;(add-hook 'js2-mode-hook
-;          (lambda ()
-;            (js2r-add-keybindings-with-prefix "C-c C-m")))
+;; js3-mode + tern
+(add-hook 'js3-mode-hook 'tern-mode)
 
 ;; skewer-mode
 (add-hook 'after-init-hook 'skewer-setup)
