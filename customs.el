@@ -16,22 +16,12 @@
  '(calc-settings-file "/etc/emacs/calc.el")
  '(calc-undo-length 256)
  '(column-number-mode t)
+ '(company-abort-manual-when-too-short t)
  '(company-auto-complete (quote (quote company-explicit-action-p)))
  '(company-auto-complete-chars nil)
  '(company-backends
    (quote
-    (\'company-tern company-bbdb
-     (\'company-ghc \'company-yasnippet)
-     (company-elisp \'company-yasnippet)
-     (company-nxml \'company-yasnippet)
-     (company-css \'company-yasnippet)
-     (company-clang \'company-yasnippet)
-     (\'company-robe \'company-yasnippet)
-     (\'company-anaconda \'company-yasnippet)
-     (company-semantic \'company-yasnippet)
-     company-cmake company-capf
-     (company-dabbrev-code company-gtags company-etags company-keywords \'company-yasnippet)
-     company-oddmuse company-files company-dabbrev)))
+    (company-abbrev company-bbdb company-capf company-clang company-cmake company-css company-dabbrev company-dabbrev-code company-eclim company-elisp company-etags company-files company-gtags company-ispell company-keywords company-nxml company-oddmuse company-pysmell company-ropemacs company-semantic company-tempo company-xcode \'company-tern \'company-ghc \'company-yasnippet \'company-robe \'company-anaconda \'company-tern)))
  '(company-begin-commands (quote (self-insert-command org-self-insert-command)))
  '(company-frontends
    (quote

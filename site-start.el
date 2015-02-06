@@ -195,6 +195,8 @@
 
 ;; {{{ hotkeys
 
+(global-set-key (kbd "C-c /") 'comment-or-uncomment-region)
+
 ;; {{{ navigation hotkeys
 
 ;; disable suspend
